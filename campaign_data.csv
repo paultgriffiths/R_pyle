@@ -1,0 +1,39 @@
+long.name, 	short.name, 	start.date, 	end.date, 	lat.min, 	lat.max, 	lon.min, 	lon.max
+GABRIEL, gabriel, 2005/10/05, 2005/10/15, 3.5, 8.0, 301.0, 309.0
+INTEX-NA Central, intex.na.ct, 2004/07/02, 2004/08/16, 30.0, 40.0, 259.5, 285.0
+INTEX-NA East Coast, intex.na.ec, 2004/07/02, 2004/08/16, 32.5, 40.0, 296.5, 307.0
+INTEX-NA North East, intex.na.ne, 2004/07/02, 2004/08/16, 42.5, 52.5, 285.0, 310.0
+INTEX-NA West Coast, intex.na.wc, 2004/07/02, 2004/08/16, 32.5, 45.0, 217.0, 240.0
+INTEX-B Mexico Gulf, intex.b.m.g, 2006/03/04, 2006/03/22, 17.5, 30.0, 258.5, 270.0
+OP3, op3, 2008/7/11, 2008/7/24, 2.5, 7.5, 112.5, 120.0
+PEM-Tropics-A Tahiti, pem.t.a.t, 1996/08/15, 1996/10/15, -20., 0.0, 200.0, 230.0
+PEM-Tropics-A Christmas-Island, pem.t.a.ci, 1996/08/15, 1996/10/15, 0.0, 10.0, 200.0, 220.0
+PEM-Tropics-A Easter-Island, pem.t.a.ei, 1996/08/15, 1996/10/15, -40.0, -20.0, 240.0, 260.0
+PEM-Tropics-A Hawaii, pem.t.a.h, 1996/08/15, 1996/10/15, 10.0, 30.0, 190.0, 210.0
+PEM-Tropics-B Christmas-Island, pem.t.b.ci, 1999/03/06, 1999/04/18, 0.0, 10.0, 200.0, 220.0
+PEM-Tropics-B Hawaii, pem.t.b.h, 1999/03/06, 1999/04/18, 10.0, 30.0, 190.0, 210.0
+PEM-Tropics-B Tahiti, pem.t.b.t, 1999/03/06, 1999/04/18, -20.0, 0.0, 200.0, 230.0
+PEM-West-A Hawaii, pem.w.a.h, 1991/09/16, 1991/10/21, 15.0, 35.0, 180.0, 210.0
+PEM-West-A Japan, pem.w.a.j, 1991/09/16, 1991/10/21, 25.0, 40.0, 135.0, 150.0
+PEM-West-A Phillipine-Sea, pem.w.a.p.s, 1991/09/16, 1991/10/21, 5.0, 20.0, 135.0, 150.0
+PEM-West-A W-Tropical-Pacific, pem.w.a.w.t.p, 1991/09/16, 1991/10/21, -5.0, 15.0, 155.0, 165.0
+PEM-West-B Philippine-Sea, pem.w.b.p.s, 1994/02/07, 1994/03/14, 5.0, 20.0, 135.0, 150.0
+PEM-West-B China-Coast, pem.w.b.c.c, 1994/02/07, 1994/03/14, 20.0, 30.0, 115.0, 130.0
+PEM-West-B Japan, pem.w.b.j, 1994/02/07, 1994/03/14, 25, 40, 135, 150
+TRACE-A E-Brazil, trace.a.e.b, 1992/09/21, 1992/10/26, -15.0, -5.0, 310.0, 320.0
+TRACE-A E-Brazil Coast, trace.a.e.b.c, 1992/09/21, 1992/10/26, -35.0, -25.0, 310.0, 320.0
+TRACE-A S-Africa, trace.a.s.af, 1992/09/21, 1992/10/26, -25.0, -5.0, 15.0, 35.0
+TRACE-A S-Atlantic, trace.a.s.at, 1992/09/21, 1992/10/26, -20.0, 0.0, 340.0, 350.0
+TRACE-A W-Africa Coast, trace.a.w.a.c, 1992/09/21, 1992/10/26, -25.0, -5.0, 0.0, 10.0
+TRACE-P China, trace.p.c, 2001/2/24, 2001/4/10, 10.0, 30.0, 110.0, 130.0
+TRACE-P Guam, trace.p.g, 2001/2/24, 2001/4/10, 10.0, 20.0, 140.0, 150.0
+TRACE-P Hawaii, trace.p.h, 2001/2/24, 2001/4/10, 10.0, 30.0, 190.0, 210.0
+TRACE-P Japan, trace.p.j, 2001/2/24, 2001/4/10, 20.0, 40.0, 130.0, 150.0
+INTEX-B CA, intex.b.ca, 2006/04/17, 2006/05/15, 37.5, 47.5, 233, 240
+INTEX-B GOA, intex.b.goa, 2006/04/17, 2006/05/15, 40.0, 60.0, 210, 225
+INTEX-B HI, intex.b.hi, 2006/04/17, 2006/05/15, 17.5, 30.0, 195, 210
+INTEX-B NP, intex.b.np, 2006/04/17, 2006/05/15, 32.5, 45.5, 191.5, 206.5
+
+
+
+
