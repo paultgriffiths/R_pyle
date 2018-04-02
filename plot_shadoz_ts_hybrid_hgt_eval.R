@@ -21,15 +21,15 @@ o3  <- get.var.ncdf(nc1, o3.code)*(conv/mm.o3)
 # source the station info and the saved pres-interplated 
 # monthly mean aggregated observations
 station.info <- read.csv(paste(obs.dir, "shadoz/station.names", sep=""))
-ascen <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/ascen_hgt.dat", sep=""))))*1E3
-cotonou <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/cotonou_hgt.dat", sep=""))))*1E3
-fiji <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/fiji_hgt.dat", sep=""))))*1E3
-java <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/java_hgt.dat", sep=""))))*1E3
-kuala <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/kuala_hgt.dat", sep=""))))*1E3
-natal <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/natal_hgt.dat", sep=""))))*1E3
-reunion <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/reunion_hgt.dat", sep=""))))*1E3
-samoa <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/samoa_hgt.dat", sep=""))))*1E3
-sancr <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/sancr_hgt.dat", sep=""))))*1E3
+ascen <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/ascen_hgt.dat", sep=""))))*1E3
+cotonou <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/cotonou_hgt.dat", sep=""))))*1E3
+fiji <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/fiji_hgt.dat", sep=""))))*1E3
+java <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/java_hgt.dat", sep=""))))*1E3
+kuala <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/kuala_hgt.dat", sep=""))))*1E3
+natal <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/natal_hgt.dat", sep=""))))*1E3
+reunion <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/reunion_hgt.dat", sep=""))))*1E3
+samoa <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/samoa_hgt.dat", sep=""))))*1E3
+sancr <- t(data.matrix(read.csv(paste(obs.dir, "shadoz/L60/sancr_hgt.dat", sep=""))))*1E3
 
 
 # extract data from model

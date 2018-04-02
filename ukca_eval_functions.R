@@ -229,7 +229,9 @@ re.grid.map <- function(data.array, data.lon) {
   # reformat the data to be centred on Greenwhich 
   require(abind)
   midlon <- which(data.lon>=180.0)[1]
+  #print(midlon)
   maxlon <- length(data.lon)
+  #print(maxlon)
   # check for size of array
   if(length(dim(data.array))==4) {
     new.array <- abind(data.array[midlon:maxlon,,,], data.array[1:midlon-1,,,], along=1)

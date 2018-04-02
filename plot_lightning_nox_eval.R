@@ -11,7 +11,7 @@ nav      <- 6.02214179E23
 lon   <- get.var.ncdf(nc1, "longitude")
 lat   <- get.var.ncdf(nc1, "latitude")
 hgt   <- get.var.ncdf(nc1, "hybrid_ht")*1E-3
-time  <- get.var.ncdf(nc1, "time")
+time  <- get.var.ncdf(nc1, "t")
 
 lgt   <- get.var.ncdf(nc1, lgt.em.code)
 

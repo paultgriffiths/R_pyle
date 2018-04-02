@@ -13,7 +13,7 @@ hgt    <- get.var.ncdf(nc1, "hybrid_ht")*1E-3 # km
 time   <- get.var.ncdf(nc1, "t")
 
 ros    <- apply(get.var.ncdf(nc0, "O3"), c(1,2), mean)
-ukca   <- apply(get.var.ncdf(nc1, "tracer1"), c(2,3), mean)
+ukca   <- apply(get.var.ncdf(nc1,  o3.code), c(2,3), mean)
 ht     <- get.var.ncdf(nc1, trop.hgt.code)
 ht     <- apply(ht, c(2), mean)*1E-3 # km
 

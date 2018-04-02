@@ -4,7 +4,7 @@
 # Alex Archibald, February 2012
 
 # OMI trop o3 column in DU
-nc0 <- open.ncdf(paste(obs.dir, "OMI/O3/column/OMI_trop_O3_2005.nc", sep=""))
+nc.omi <- open.ncdf(paste(obs.dir, "OMI/O3/column/OMI_trop_O3_2005.nc", sep=""))
 
 # extract vars
 lon   <- get.var.ncdf(nc1, "longitude")
@@ -23,8 +23,8 @@ source(paste(script.dir, "check_model_dims.R", sep=""))
 o3      <- get.var.ncdf(nc1,o3.code) # kg/kg o3
 trophgt <- get.var.ncdf(nc1,trop.hgt.code)
 mass    <- get.var.ncdf(nc1,air.mass) #, start=c(1,1,1,1),count=c(96,73,60,12)) # kg air
-omi.o3  <- get.var.ncdf(nc0, "O3") # OMI trop ozone in DU
-sat.lat <- get.var.ncdf(nc0, "latitude")
+omi.o3  <- get.var.ncdf(nc.omi, "O3") # OMI trop ozone in DU
+sat.lat <- get.var.ncdf(nc.omi, "latitude")
 
 # #####################################################################
 # Check to see if a trop. mask and mass exist?

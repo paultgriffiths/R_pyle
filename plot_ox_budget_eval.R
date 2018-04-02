@@ -3,7 +3,7 @@
 
 # Alex Archibald, February 2012
 
-library(ncdf)
+#library(ncdf)
 # define constants and conv. factors
 conv.factor <- 60*60*24*30*48*(1e-12)
 nav         <- 6.02214179E23

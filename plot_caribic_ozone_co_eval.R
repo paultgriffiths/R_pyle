@@ -3,7 +3,7 @@
 # 8-12 km (UTLS)
 
 # ATA, June 2012
-
+rm(var)
 # define constants and vars
 i <- NULL
 conv <- 1E9

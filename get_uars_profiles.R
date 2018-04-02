@@ -2,8 +2,8 @@
 # UARS data
  
 # open data
-nc0 <- open.ncdf(paste(obs.dir, "UARS/uars_data_on_height.nc", sep=""))
-
+#nc0 <- open.ncdf(paste(obs.dir, "UARS/uars_data_on_height.nc", sep=""))
+nc0 <- open.ncdf(paste(obs.dir, "UARS/uars_clim.nc", sep=""))
 # extract variables (UARS height in km's)
 uars.hgt <- get.var.ncdf(nc0,"z")
 uars.lat <- get.var.ncdf(nc0, "latitude")

@@ -9,7 +9,7 @@
 conv <- 1E9
 
 # logical to interpolat ozone field onto pressure levels
-interp.field <- FALSE
+interp.field <- TRUE
 
 if (interp.field==TRUE) {
 
@@ -35,16 +35,17 @@ rm(newvv); rm(var)
 } else {
 # import the saved pressure interpolated model o3 data
 nc0 <- open.ncdf(paste(out.dir, mod1.name, "_pres_interp_ozone.nc",sep=""))
+# extract variables from UKCA
+lon <- get.var.ncdf(nc0, "longitude")
+lat <- get.var.ncdf(nc0, "latitude")
+lev <- get.var.ncdf(nc0, "p")
+time <- get.var.ncdf(nc0, "t") 
+o3 <- re.grid.map(get.var.ncdf(nc1, o3.code), lon)*(conv/mm.o3)
 }
 # import the ACCMIP ENS fields
 nca <- open.ncdf(paste(obs.dir, "ACCMIP/ENS/vmro3RF_ACCMIP-monthly_ENS_acchist_r1i1p1_2000slice.nc", sep=""))
 
-# extract variables from UKCA
-lon <- get.var.ncdf(nc0, "longitude")
-lat <- get.var.ncdf(nc0, "latitude")
-lev <- get.var.ncdf(nc0, "pressure")
-time <- get.var.ncdf(nc0, "time") 
-o3 <- re.grid.map(get.var.ncdf(nc0, o3.code), lon)*(conv/mm.o3)
+
 
 # extract variables from ACCMIP
 lon.a <- get.var.ncdf(nca, "lon")

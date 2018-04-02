@@ -2,7 +2,7 @@
 # TES data
  
 # open data
-nc0 <- open.ncdf(paste(obs.dat, "TES/tes_o3_2005.nc", sep=""))
+nc0 <- open.ncdf(paste(obs.dir, "TES/tes_o3_2005.nc", sep=""))
 
 # extract variables (TES height in hPa's)
 tes.hgt <- get.var.ncdf(nc0,"Pressure")

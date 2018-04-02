@@ -4,7 +4,7 @@
 # Alex Archibald, May 2012
 
 # extract/define variables
-source((paste(script.dir, "get_model_dims.R", sep=""))
+source((paste(script.dir, "get_model_dims.R", sep="")))
 hgt    <- hgt*1E-3
 conv   <- 1E9 # ppb
 

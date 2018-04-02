@@ -42,7 +42,7 @@ pp    <- array(as.numeric(NA), dim=c(xmax,ymax,zmax,tmax))
 vv    <- array(as.numeric(NA), dim=c(xmax,ymax,zmax,tmax))
 
 # check for dimension missmatches
-source("/home/ata27/R/interp_error_checks.R")
+source("interp_error_checks.R")
 
 # Main code here -------------------------------------------------------------------------------------- #
 # loop over all time steps

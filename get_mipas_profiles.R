@@ -2,7 +2,7 @@
 # MIPAS data
  
 # open data
-nc0 <- open.ncdf(paste(obs.data, "MIPAS/mipas_o3_2003-2008.nc", sep=""))
+nc0 <- open.ncdf(paste(obs.dir, "MIPAS/mipas_o3_2003-2008.nc", sep=""))
 
 # extract variables (MIPAS height in hPa's)
 mipas.hgt <- get.var.ncdf(nc0,"z")

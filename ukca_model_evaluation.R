@@ -18,18 +18,18 @@
 
 # load the required libraries for the evaluation.
 # These should be installed on the Linux system
-library(ncdf)
+library(ncdf4)
 library(abind)
 library(fields)
 library(plotrix)
 library(maps)
 library(gdata)
 library(RColorBrewer)
-
+library(here)
 # Set paths to scripts and observations
-script.dir <- "~/Dropbox/r_scripts/ukca_evaluation/"
-obs.dir    <- "~/Obs/"
-ancil.dir  <- "~/ancils/"
+script.dir <- here("/")
+obs.dir    <- here("Obs/")
+ancil.dir  <- here("ancils/")
 
 # Required variables -- and variable/dimension names (NOT stash codes):
 # latitude (degrees) -- 
@@ -49,7 +49,7 @@ time.dim.name <- "t"
 # The STASH codes of variables are assigned variable names  in the script below
 # which you may want/need to change depending on your output..
 #source(paste(script.dir, "tracer_var_codes_CheST.R", sep=""))
-source("~/Dropbox/r_scripts/ukca_evaluation/tracer_var_codes.R")
+source("tracer_var_codes_xinyk.R")
 
 # For CheT runs only!!! 
 # set the fraction of CH4 in model run (can get from UMUI)
@@ -63,21 +63,27 @@ f.ch4 <- 9.75E-7
   
 # enter name of model run and some info for legends 
 #mod1.name <- exp.list[ee]
-mod1.name <- "xijgl"
+mod1.name <- "xgywn"
 mod1.meta <- "CheST" # Anything you like..
 mod1.type <- "CheST" # CheS, CheST or CheT
+open.ncdf <- nc_open
+get.var.ncdf <- ncvar_get
+
+##
+## NC1 should be an input file of 12x60x73x96 dimension
+##
 
 # give locations of netcdf files for input
-nc1 <- open.ncdf("~/Desktop/xgywn_evaluation_output.nc")
+#nc1 <- open.ncdf("~//xgywn_evaluation_output.nc")
 #nc1 <- open.ncdf(paste("~/Desktop/AurelienQuiquet/data/",mod1.name,"_pmclim.nc", sep=""), readunlim=FALSE) 
-#nc1 <- open.ncdf(paste("/nerc/ukca/aarchi/",mod1.name,"/",mod1.name,"_evaluation_output.nc", sep=""), readunlim=FALSE) 
-
+nc1 <- open.ncdf(paste(here("data/"),mod1.name,"/",mod1.name,"_evaluation_output_clim.nc", sep=""), readunlim=FALSE) 
+#nc0 <- nc1
 # set the working directory for output (default to directory of this script)
-out.dir <- "~/Documents/Teaching/C4/LectureNotes/"
-#out.dir <- paste("/nerc/ukca/aarchi/",mod1.name,"/",sep="")
+
+out.dir <- here("out/")
 
 # set the directory where the R scripts are saved
-run.path <- getwd()
+run.path <- here()
 
 # ##############################################################
 
@@ -86,9 +92,8 @@ source(paste(script.dir, "get_mol_masses.R", sep=""))
 
 # check the dimensions of the model output to determine which ancil files
 # to use
-source(paste(script.dir, "get_model_dims.R", sep=""))
-source(paste(script.dir, "check_model_dims.R", sep=""))
-#source("~/evaluation/check_model_dims.R")
+source(paste(script.dir,"get_model_dims.R", sep=""))
+source(paste(script.dir,"/", "check_model_dims.R", sep=""))
 
 # source some useful functions for plotting:
 source(paste(script.dir, "ukca_eval_functions.R", sep=""))
@@ -105,7 +110,7 @@ tau.cols  <- colorRampPalette(c("white", "yellow", "red"))
 # ##############################################################
 # Select which plots you want to make.
 # plot O3 column?
-#source(paste(script.dir,"plot_total_o3_col_eval.R", sep=""))
+source(paste(script.dir,"plot_total_o3_col_eval.R", sep=""))
 
 # plot O3 column?
 source(paste(script.dir,"plot_total_o3_col_eval_mod.R", sep=""))
@@ -113,22 +118,22 @@ source(paste(script.dir,"plot_total_o3_col_eval_mod.R", sep=""))
 #} # end loop over exp's
 
 # remove all data from current session!
-rm(list=ls())
-q()
+# rm(list=ls())
+# q()
 
 # plot surf O3?
-source(paste(script.dir,"plot_surf_o3_range_eval.R", sep=""))
-source(paste(script.dir,"plot_surf_o3_eval.R", sep=""))
-source(paste(script.dir,"plot_O3_GAW_WDCGG_eval.R", sep=""))
+# source(paste(script.dir,"plot_surf_o3_range_eval.R", sep=""))
+# source(paste(script.dir,"plot_surf_o3_eval.R", sep=""))
+# source(paste(script.dir,"plot_O3_GAW_WDCGG_eval.R", sep=""))
 
 # plot T bias?
-source(paste(script.dir,"plot_zonal_mean_temp_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_temp_ERA_eval.R", sep=""))
 
 # plot specific humidity bias?
-source(paste(script.dir,"plot_zonal_mean_q_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_q_ERA_eval.R", sep=""))
 
 # plot zonal winds?
-source(paste(script.dir,"plot_zonal_mean_u_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_u_ERA_eval.R", sep=""))
 
 # plot O3 column?
 source(paste(script.dir,"plot_total_o3_col_eval.R", sep=""))
@@ -161,11 +166,11 @@ source(paste(script.dir,"plot_tracer_profiles_eval.R", sep=""))
 source(paste(script.dir,"plot_UKCA_Emmons_eval.R", sep=""))
 
 # plot the tropospheric Ox budget?
-#source(paste(script.dir,"plot_ox_budget_eval.R", sep=""))
-source(paste(script.dir,"plot_ox_budget_wesley_eval.R", sep=""))
+source(paste(script.dir,"plot_ox_budget_eval.R", sep=""))
+#source(paste(script.dir,"plot_ox_budget_wesley_eval.R", sep=""))
 
 # plot the stratospheric ox budget?
-#source(paste(script.dir,"plot_strat_ox_budget_eval.R", sep=""))
+source(paste(script.dir,"plot_strat_ox_budget_eval.R", sep=""))
 
 # plot the tropospheric methane lifetime?
 source(paste(script.dir,"plot_tau_ch4_eval.R", sep=""))
@@ -192,7 +197,7 @@ source(paste(script.dir,"plot_zonal_mean_no2_eval.R", sep=""))
 source(paste(script.dir,"plot_zonal_mean_ch4_ERA_eval.R", sep=""))
 
 # plot surf O3?
-source(paste(script.dir,"plot_surf_o3_eval.R", sep=""))
+#source(paste(script.dir,"plot_surf_o3_eval.R", sep=""))
 
 # plot surf O3 against obs?
 source(paste(script.dir,"plot_JPN_O3_tseries_eval.R", sep=""))
@@ -212,10 +217,10 @@ source(paste(script.dir,"plot_ethane_propane_CMDL_eval.R", sep=""))
 source(paste(script.dir,"plot_ros_o3_bias_eval.R", sep=""))
 
 # plot comparison to surface methanol
-source(paste(script.dir,"plot_srf_meoh_comparison.R", sep=""))
+#source(paste(script.dir,"plot_srf_meoh_comparison.R", sep=""))
 
 # plot comparison to vertical methanol
-source(paste(script.dir,"plot_Emmons_MeOH_eval.R", sep=""))
+#source(paste(script.dir,"plot_Emmons_MeOH_eval.R", sep=""))
 
 # plot zonal O3 tendency?
 source(paste(script.dir,"plot_zonal_mean_o3_tendency_ERA_eval.R", sep=""))
@@ -226,11 +231,11 @@ source(paste(script.dir,"plot_total_o3_col_polar_eval.R", sep=""))
 # plot lightning NOx emissions
 source(paste(script.dir,"plot_lightning_nox_eval.R", sep=""))
 
-q()
+#q()
 
 # # plot the tropospheric NOx lifetime?
-# #source(paste(script.dir,"plot_nox_lifetime_eval.R", sep=""))
+#source(paste(script.dir,"plot_nox_lifetime_eval.R", sep=""))
 
 
 # # plot NOy profiles?
-# #source(paste(script.dir,"plot_zonal_noy_eval.R", sep=""))
+#source(paste(script.dir,"plot_zonal_noy_eval.R", sep=""))
