@@ -179,22 +179,22 @@ source(paste(script.dir,"plot_tau_ch4_eval.R", sep=""))
 source(paste(script.dir,"plot_age_of_air_eval.R", sep=""))
 
 # plot zonal O3?
-source(paste(script.dir,"plot_zonal_mean_o3_ERA_eval.R", sep=""))
-
-# plot zonal ClO?
-source(paste(script.dir,"plot_zonal_mean_clo_ERA_eval.R", sep=""))
-
-# plot zonal HONO2?
-source(paste(script.dir,"plot_zonal_mean_hono2_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_o3_ERA_eval.R", sep=""))
+# 
+# # plot zonal ClO?
+# source(paste(script.dir,"plot_zonal_mean_clo_ERA_eval.R", sep=""))
+# 
+# # plot zonal HONO2?
+# source(paste(script.dir,"plot_zonal_mean_hono2_ERA_eval.R", sep=""))
 
 # plot zonal HCl?
-source(paste(script.dir,"plot_zonal_mean_hcl_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_hcl_ERA_eval.R", sep=""))
 
 # plot zonal NO2?
 source(paste(script.dir,"plot_zonal_mean_no2_eval.R", sep=""))
 
 # plot zonal CH4?
-source(paste(script.dir,"plot_zonal_mean_ch4_ERA_eval.R", sep=""))
+# source(paste(script.dir,"plot_zonal_mean_ch4_ERA_eval.R", sep=""))
 
 # plot surf O3?
 #source(paste(script.dir,"plot_surf_o3_eval.R", sep=""))
